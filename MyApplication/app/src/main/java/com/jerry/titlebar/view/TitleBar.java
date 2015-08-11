@@ -241,28 +241,28 @@ public class TitleBar extends RelativeLayout implements OnClickListener {
 
     //给logo设置方法
     public void setLogoName(String name) {
-        this.logoName = name;
+        mLogoName.setText(name);
     }
 
     public void setLogoColor(int color) {
-        this.logoColor = color;
+        mLogoName.setTextColor(color);
     }
 
     public void setLogoSize(int size) {
-        this.logoSize = size;
+        mLogoName.setTextSize(size);
     }
 
     //给title设置方法
     public void setTitleName(String name) {
-        this.titleText = name;
+        mTitle.setText(name);
     }
 
     public void setTitleColor(int color) {
-        this.titleColor = color;
+        mTitle.setTextColor(color);
     }
 
     public void setTitleSize(int size) {
-        this.titleSize = size;
+        mTitle.setTextSize(size);
     }
 
 
@@ -279,15 +279,15 @@ public class TitleBar extends RelativeLayout implements OnClickListener {
 
     //给icon1设置方法
     public void setIcon2Name(String name) {
-        this.icon2Name = name;
+       mIcon2.setText(name);
     }
 
     public void setIcon2Color(int color) {
-        this.icon2Color = color;
+       mIcon2.setTextColor(color);
     }
 
     public void setIcon2Size(int size) {
-        this.icon2Size = size;
+       mIcon2.setTextSize(size);
     }
 
     public void setIcon2Visibility(int visibility) {
