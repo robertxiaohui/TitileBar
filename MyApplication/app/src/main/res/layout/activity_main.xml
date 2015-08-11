@@ -1,0 +1,18 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:titleBar="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.jerry.titlebar.view.TitleBar
+        android:id="@+id/tb_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        titleBar:backgroud="#FFE63D"
+        titleBar:icon2="@mipmap/main_activtiy_add_normal"
+        titleBar:logoIcon="@mipmap/back"
+        titleBar:logoSize="15sp"
+        titleBar:titleColor="@android:color/black"
+        titleBar:titleSize="20sp"
+        titleBar:titleText="小螺趣租" />
+
+</RelativeLayout>
