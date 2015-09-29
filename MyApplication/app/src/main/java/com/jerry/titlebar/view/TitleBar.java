@@ -28,10 +28,12 @@ public class TitleBar extends RelativeLayout implements OnClickListener {
     private ImageView mBack;
     float scale;
 
-    private String logoName;
-    private int logoSize;
-    private int logoColor;
-    private int logoIcon;
+    private String leftName;
+    private int leftSize;
+    private int leftColor;
+    private int leftIcon;
+    private int leftIconDirection;
+
     private String titleText;
     private int titleColor;
     private int titleSize;
@@ -73,10 +75,11 @@ public class TitleBar extends RelativeLayout implements OnClickListener {
      */
     private void initData() {
         // 获得xml里定义的属性,格式为 名称_属性名 后面是默认值
-        logoName = mTypedArray.getString(R.styleable.TitleBar_logoName);
-        logoSize = mTypedArray.getDimensionPixelSize(R.styleable.TitleBar_logoSize, 10);
-        logoColor = mTypedArray.getColor(R.styleable.TitleBar_logoColor, Color.BLACK);
-        logoIcon = mTypedArray.getResourceId(R.styleable.TitleBar_logoIcon, 10);
+        leftName = mTypedArray.getString(R.styleable.TitleBar_leftName);
+        leftSize = mTypedArray.getDimensionPixelSize(R.styleable.TitleBar_leftSize, 10);
+        leftColor = mTypedArray.getColor(R.styleable.TitleBar_leftColor, Color.BLACK);
+        leftIcon = mTypedArray.getResourceId(R.styleable.TitleBar_leftIcon, 10);
+        leftIconDirection = mTypedArray.get(R.styleable.TitleBar_leftIconDirection, 10);
 
         titleText = mTypedArray.getString(R.styleable.TitleBar_titleText);
         titleSize = mTypedArray.getDimensionPixelSize(R.styleable.TitleBar_titleSize, 15);
@@ -97,14 +100,14 @@ public class TitleBar extends RelativeLayout implements OnClickListener {
         //设置背景颜色
         mRl.setBackgroundColor(backgroud);
         //mRl.setBackgroundResource(backgroud);
-        if (logoName == null) {
+        if (leftName == null) {
             //没有设置文字,就显示图片
-            if (logoIcon == 10) {
+            if (leftIcon == 10) {
                 mLogoName.setVisibility(INVISIBLE);
             } else {
                 mLogoName.setVisibility(VISIBLE);
                 //设置显示图片
-                Drawable mLogoIcon = getResources().getDrawable(logoIcon);
+                Drawable mLogoIcon = getResources().getDrawable(leftIcon);
                 mLogoIcon.setBounds(0, 0, mLogoIcon.getMinimumWidth(), mLogoIcon.getMinimumHeight());
                 mLogoName.setCompoundDrawables(mLogoIcon, null, null, null);
                 //mLogoName.setLeft(icon2);
@@ -112,9 +115,9 @@ public class TitleBar extends RelativeLayout implements OnClickListener {
 
         } else {
             //设置了文字
-            mLogoName.setText(logoName);
-            mLogoName.setTextSize(logoSize / scale);
-            mLogoName.setTextColor(logoColor);
+            mLogoName.setText(leftName);
+            mLogoName.setTextSize(leftSize / scale);
+            mLogoName.setTextColor(leftColor);
             //mLogoName.setVisibility(INVISIBLE);
         }
 
@@ -240,15 +243,15 @@ public class TitleBar extends RelativeLayout implements OnClickListener {
     }
 
     //给logo设置方法
-    public void setLogoName(String name) {
+    public void setLeftName(String name) {
         mLogoName.setText(name);
     }
 
-    public void setLogoColor(int color) {
+    public void setLeftColor(int color) {
         mLogoName.setTextColor(color);
     }
 
-    public void setLogoSize(int size) {
+    public void setLeftSize(int size) {
         mLogoName.setTextSize(size);
     }
 
